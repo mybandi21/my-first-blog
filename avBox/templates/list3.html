@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List</title>>
+</head>
+<body>
+
+
+  <style type ="text/css">
+  div#side_left{
+  width:200px;
+  height:400px;
+  background-color:yellow;
+  float:left;
+  margin:5px;
+  }
+  #side_left_box{
+  width:95%;
+  height:45%;
+  background-color:blue;
+  float:left;
+  margin:5px;
+  }
+  #mid_content{
+  width:400px;
+  height:400px;
+  background-color:green;
+  float:left;
+  margin:5px;
+  }
+  #side_content_box{
+  display: inline;
+  background-color:white;
+  margin:5px;
+  }
+  #side_rigth{
+  width:200px;
+  height:400px;
+  background-color:red;
+  float:left;
+  margin:5px;
+  }
+  #side_rigth_box{
+  width:95%;
+  height:45%;
+  background-color:skyblue;
+  margin:5px;
+  margin-top:95%;
+  }
+
+ #img_container {
+     position:absolute;
+     width:100%;
+     height:100%;
+ }
+
+ #img_container img {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-25px;
+    margin-left:-25px;
+}
+
+.product-title {
+    text-align:center;
+    display:table;
+    border:1px solid #cecece;
+    width:280px;
+    height:250px;
+}
+
+.product-img-div {
+    display:table-cell;
+    vertical-align:middle;
+    width:280px;
+    height:250px;
+}
+
+.product-img {
+  max-width:280px;
+  max-height:250px;
+}
+</style>
+</head>
+
+<body>
+
+<ul>
+    {% for article in articleList %}
+    <li>
+      <br>
+      <div class="product-title">
+        <div class="product-img-div">
+        	<img class="product-img" src="/static/{{ article.thum_path }}">
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

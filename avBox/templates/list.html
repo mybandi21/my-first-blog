@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List</title>>
+
+<style type ="text/css">
+
+#div_canvus{
+  width:800px;
+  height:500px;
+  background-color:gray;
+  float:left;
+  margin:2px;
+}
+
+#side_left{
+  width:200px;
+  height:400px;
+  background-color:yellow;
+  float:left;
+  margin:5px;
+}
+
+#side_left_box{
+width:95%;
+height:45%;
+background-color:blue;
+float:left;
+margin:5px;
+}
+#mid_content{
+width:400px;
+height:400px;
+background-color:green;
+
+text-align:center;
+display:table;
+border:1px solid #cecece;
+
+float:left;
+margin:5px;
+}
+#side_content_box{
+display: inline;
+background-color:white;
+margin:5px;
+}
+#side_rigth{
+width:200px;
+height:400px;
+background-color:red;
+float:left;
+margin:5px;
+}
+#side_rigth_box{
+width:95%;
+height:45%;
+background-color:skyblue;
+margin:5px;
+margin-top:95%;
+}
+
+#img_container {
+position:absolute;
+width:100%;
+height:100%;
+}
+
+#img_container img {
+position:absolute;
+top:50%;
+left:50%;
+margin-top:-25px;
+margin-left:-25px;
+}
+
+.product-title {
+width:300px;
+height:300px;
+background-color:green;
+
+text-align:center;
+display:table;
+border:1px solid #cecece;
+
+float:left;
+margin:5px;
+}
+
+.product-img-div {
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.fit-img {
+width:200px;
+height:200px;
+object-fit: contain;
+}
+
+.fff-img {
+max-width: 100%;
+width:auto ! important;
+height:auto ! important;
+}
+</style>
+</head>
+
+<body>
+
+<ul>
+    {% for article in articleList %}
+
+    <div id = "div_canvus"> 작업 영역
+
+    <div id = "side_left">사이드바 왼쪽
+        <div id = "side_left_box">사이드바 왼쪽 위</div>
+        <div id = "side_left_box">사이드바 왼쪽 아래</div>
+    </div>
+
+    <div class = "product-title">
+        <div class="product-img-div">
+          <img class="fff-img" src="/static/{{ article.thum_path }}">
+        </div>
+    </div>
+
+    <div id = "side_rigth">사이드바 오른쪽
+        <div id = "side_rigth_box">사이드바 오른쪽 아래</div>
+    </div>
+  </div>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

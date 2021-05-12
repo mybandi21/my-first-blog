@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List</title>>
+</head>
+<body>
+<ul>
+    <li>품 명   | 타이틀  | 분 류   | 이미지 </li>
+    {% for article in articleList %}
+      <li><a href="/view/{{ article.id }}">{{ article.av_code }}</a> | {{ article.av_title }} | {{ article.av_tag }} | <img src="/static/{{ article.thum_path }}">  </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
